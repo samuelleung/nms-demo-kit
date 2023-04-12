@@ -61,13 +61,17 @@ Click on the browser Refresh button for the page to display availalble modules.
 
 3. **Start NGINX Plus**
 ```
+#Get your laptop IP address
+#example: get IP address from Mac with wireless interface en0
+LOCALIP=`ipconfig getifaddr en0`
+
 #Build NGINX Plus image with nginx-agent
 #Specify NMS IP address (your laptop IP address), DO NOT use localhost or 127.0.0.1
-./scripts/buildNPlusWithAgent.sh -t npluswithagent -n https://192.168.1.3
+./scripts/buildNPlusWithAgent.sh -t npluswithagent -n https://$LOCALIP
 
 #Build NGINX Plus (ACM Dev-Portal) image with nginx-agent
 #Specify NMS IP address (your laptop IP address), DO NOT use localhost or 127.0.0.1
-./scripts/buildNPlusWithAgent.sh -t npluswithagent:devportal -D -n https://192.168.1.3
+./scripts/buildNPlusWithAgent.sh -t npluswithagent:devportal -D -n https://$LOCALIP
 
 #Uncomment nginx-lb, nginx-gw, httpbin-app, acm.nginx-devportal section in docker-compose.yaml section
 docker-compose -f docker-compose.yaml up -d
