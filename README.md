@@ -144,6 +144,12 @@ We have configured NGINX load balancer to return backend server's IP address. Th
 
 5. **Configure API Gateway using ACM**
 
+backend: httpbin
+```
+HTTPBINIP=`docker exec -it  nms-demo-kit_httpbin-app_1 hostname -i`
+docker exec -it nms-demo-kit_nginx-lb_1 curl -v $HTTPBINIP/get
+```
+
 Tips: For step 5, you may choose to use the script to automate ACM configuration. However, you are encouraged to manually execute the steps below to be familiar with the ACM workflow.
 ```
 #sh misc/end2end_deploy.sh
