@@ -30,6 +30,7 @@ chmod 755 ./scripts/*
 
 #Download NGINX Plus trial license and put nginx-repo.crt and nginx-repo.key in nginx-plus folder
 cp nginx-repo.* nginx-plus/
+chmod 755 nginx-plus/*
 
 #Build NMS (NGINX Instance Manager, API Connectivity Manager) container image
 #Example build with the latest release
