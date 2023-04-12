@@ -317,3 +317,7 @@ curl "localhost:83/get?username=1'%20or%20'1'%20=%20'1'))%20LIMIT%201/*&amp;pass
 After generating some violations, head over to NMS Security Monitoring dashboard to view the report.
 ![alt text](assets/nms-security-monitoring.png)
 
+Congratulations! You finished all sections. Run below command to remove all containers from this lab.
+```
+docker-compose -f docker-compose.yaml down 
+```
