@@ -90,7 +90,23 @@ For the first time, click browser refresh. On NMS Instance Manager dashboard, yo
 
 Enable NGINX API for NGINX LB
 
-- In Instance Manager section, Instances tab, click on nginx-lb and Edit Config, add a new file as /etc/nginx/conf.d/nplusapi.conf  You may copy the content from repo misc/nplusapi.conf
+- In Instance Manager section, Instances tab, click on nginx-lb and Edit Config, add a new file as /etc/nginx/conf.d/nplusapi.conf  You may copy the content from repo misc/nplusapi.conf, or copy from below.
+```
+server {
+
+    listen       8080;
+
+        location /api {
+        api write=on;
+        allow all;
+    }
+
+    location / {
+    root /usr/share/nginx/html;
+    index   dashboard.html;
+    }
+}
+```
 ![alt text](assets/edit-nginx-plus-api-conf.png)
 
 - Replace the existing default.conf config with misc/lb.conf config
