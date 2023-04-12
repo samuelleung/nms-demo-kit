@@ -74,6 +74,9 @@ LOCALIP=`ipconfig getifaddr en0`
 ./scripts/buildNPlusWithAgent.sh -t npluswithagent:devportal -D -n https://$LOCALIP
 
 #Uncomment nginx-lb, nginx-gw, httpbin-app, acm.nginx-devportal section in docker-compose.yaml section
+#if you use vi to edit docker-compose.yaml, apply command ":32,65s/# //g"
+
+#To deploy nginx-lb, nginx-gw, httpbin-app, acm.nginx-devportal
 docker-compose -f docker-compose.yaml up -d
 ```
 You should have these number of containers running
