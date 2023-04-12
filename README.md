@@ -146,7 +146,7 @@ We have configured NGINX load balancer to return backend server's IP address. Th
 
 backend: httpbin
 ```
-HTTPBINIP=`docker exec -it  nms-demo-kit_httpbin-app_1 hostname -i`
+HTTPBINIP=$(docker exec -it nms-demo-kit_httpbin-app_1 hostname -i | tr -d '\r')
 docker exec -it nms-demo-kit_nginx-lb_1 curl -v $HTTPBINIP/get
 ```
 
