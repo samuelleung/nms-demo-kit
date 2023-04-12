@@ -232,6 +232,9 @@ At the time of this writing, it is possible to manage NAP policies via NMS in VM
 ./scripts/buildNAPWithAgent.sh -t napwithagent -n https://$LOCALIP
 
 #Uncomment nginx-nap section in docker-compose.yaml section
+#if you use vi to edit docker-compose.yaml, apply command ":66,73s/# //g"
+
+#To deploy nginx-nap
 docker-compose -f docker-compose.yaml up -d
 ```
 
