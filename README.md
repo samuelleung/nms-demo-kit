@@ -229,7 +229,7 @@ At the time of this writing, it is possible to manage NAP policies via NMS in VM
 ```
 #Build NGINX App Protect image with nginx-agent
 #Specify NMS IP address (your laptop IP address), DO NOT use localhost or 127.0.0.1
-./scripts/buildNAPWithAgent.sh -t napwithagent -n https://192.168.1.3
+./scripts/buildNAPWithAgent.sh -t napwithagent -n https://$LOCALIP
 
 #Uncomment nginx-nap section in docker-compose.yaml section
 docker-compose -f docker-compose.yaml up -d
