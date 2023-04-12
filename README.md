@@ -41,8 +41,7 @@ chmod 755 nginx-plus/*
 #./scripts/buildNMS.sh -t nginx-nms:2.6 -C nginx-plus/nginx-repo.crt -K nginx-plus/nginx-repo.key -A -W
 
 #To deploy NMS container
-#
-in MacOS might encounter port 5000 being used by AirPlay sharing process. 
+#in MacOS might encounter port 5000 being used by AirPlay sharing process. 
 #You may change the port to other than 5000 in docker-compose.yaml eg: - "6000:5000"
 
 docker-compose -f docker-compose.yaml up -d
