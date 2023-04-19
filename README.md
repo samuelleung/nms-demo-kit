@@ -30,7 +30,7 @@ chmod 755 ./scripts/*
 
 #Download NGINX Plus trial license and put nginx-repo.crt and nginx-repo.key in nginx-plus folder
 cp nginx-repo.* nginx-plus/
-chmod 755 nginx-plus/*
+chmod 755 nginx-plus/nginx-repo*
 ```
 
 Once the repo is cloned and N+ license files are in place, we can start to build NMS
